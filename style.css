@@ -1,55 +1,202 @@
 /* Zoya's css ruleset will be paste below of this comment line*/
 
 /*Nandini's css ruleset will be paste below of this comment line */
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Root variables */
+:root {
+    --profile-large: 22vh;
+    --profile-medium: 18vh;
+    --profile-small: 15vh;
+    --container-width: 90%;
+    --text-color: #292626;
+    --spacing-large: 2rem;
+    --spacing-medium: 1rem;
+    --spacing-small: 0.5rem;
+}
+
 body {
+    min-height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
-    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #fff;
+    padding: var(--spacing-medium);
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    width: 80%;
+    gap: var(--spacing-large);
+    width: var(--container-width);
+    max-width: 1200px;
+    position: relative;
 }
 
 .profile {
-    text-align: center;
-    margin: 20px;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-small);
 }
 
 .profile-content {
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    object-fit: cover;
+}
+
+.profile img:hover {
+    transform: scale(1.05);
 }
 
 .profile p {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: 18px;
+    font-size: clamp(1rem, 2vw, 1.125rem);
     font-weight: 500;
-    color: #181717;
-    padding: 5px 20px;
-    border-radius: 10px;
+    color: var(--text-color);
+    padding: 0.5em 1em;
+    text-align: center;
+    width: 100%;
+    margin-top: 0.5rem;
 }
+
+/* Desktop layout */
+@media (min-width: 769px) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .profile-1 img {
+        width: var(--profile-medium);
+        height: var(--profile-medium);
+    }
+
+    .profile-2 img {
+        width: var(--profile-large);
+        height: var(--profile-large);
+    }
+
+    .profile-3 img {
+        width: var(--profile-small);
+        height: var(--profile-small);
+    }
+}
+/* mobile layout*/
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 400px;
+        height: 50vh; 
+        display: grid;
+        grid-template-areas: 
+            ". top ."
+            "left . right";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    
+    .profile-2 {
+        position: absolute;
+          left: 50%;
+        transform: translateX(-50%);
+        
+    }
+
+
+    .profile-1 {
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        right: inherit;
+        top: 35%;
+        transform: translateX(-70%);
+        
+    }
+
+ 
+    .profile-3 {
+        position: absolute;
+        bottom: 0;
+        right: 25%;
+        top: 40%;
+        transform: translateX(70%);
+        
+    }
+
+
+    .profile-2 img{
+        width: (--profile-large);
+        height:(--profile-large);
+        
+    }
+    .profile-1 img{
+        width: var(--profile-medium);
+        height: var(--profile-medium);}
+    }
+    .profile-3 img {
+        width: var(--profile-small);
+        height: var(--profile-small);
+        
+    }
+
+
+/* Smaller mobile screens */
+@media (max-width: 480px) {
+    .container {
+        height: 350px;
+    }
+
+    .profile-2 img,
+    .profile-1 img,
+    .profile-3 img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+    .container {
+        height: 300px;
+    }
+
+    .profile-2 img,
+    .profile-1 img,
+    .profile-3 img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile img {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+
+
+
 
 /*Aryans's css ruleset will be paste below of this comment line */
