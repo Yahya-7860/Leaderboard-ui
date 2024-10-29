@@ -1,5 +1,102 @@
 /* Zoya's css ruleset will be paste below of this comment line*/
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Arial, sans-serif;
+}
+
+.heading{
+    display:flex;
+    text-align: center;
+   justify-content: center;
+   margin-bottom: 2em;
+}
+
+.title{
+font-weight: bold;
+    font-size: 2em;
+    display:flex;
+    color: #2b0b52;
+   margin-top: 10px;
+   background: linear-gradient( 45deg,#140f30,#470c5c,#51478a);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.logo{
+    display: flex;
+    width:40px;
+    height: 40px;
+    padding:0.5em;
+ }
+
+ .panel{
+    display:flex;
+    justify-content: space-around;
+}
+.teams{
+    display: flex;
+    padding:20px;
+}
+
+.select-team{
+    font-size: 1em;
+    padding: 0.2em;
+    text-wrap:nowrap;
+}
+.dropdown {
+    display: flex;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 0.2em;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.admin-button {
+    font-weight: bold;
+    text-wrap: nowrap;
+    margin-top: 2em;
+    width: 7em;
+    height:2em;
+    font-size: 0.7em;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+    cursor: pointer; 
+    background: linear-gradient( 45deg,#140f30,#470c5c,#51478a);
+}
+
+
+    @media screen and (max-width: 540px) {
+        .title{
+            font-size: 1.5em;
+        }
+
+          .heading{
+            justify-content: center;
+            margin-bottom: 0.75em;
+        }
+        .logo{
+            width:25px;
+            height: 25px;
+            margin-left: 5px;
+        }
+       
+        .dropdown,.select-team{
+            font-size: 0.7em;
+        padding: 0.1em;
+        }
+        .admin-button{
+            height:1.6em;
+            font-size: 0.65em;
+         padding: 0.3em;
+            border-radius: 4px;
+        }
+      }
 /*Nandini's css ruleset will be paste below of this comment line */
 /* Reset styles */
 * {
